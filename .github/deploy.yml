@@ -1,0 +1,20 @@
+name: Github Actions Deploy
+on: [push]
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PWD }}
+          script_stop: true
+          script: |
+            cd /root/resource/nginx
+            ls -al
+            rm -rf deploy-test
+            git clone https://github.com/sam9831/deploy-test.git
+            cd deploy-test
+            npm install
+            npm run build
