@@ -7,7 +7,8 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.<br>
       hello imooc.com<br>
       hello jenkins<br>
-      hello github-hooks
+      hello github-hooks<br>
+      hello docker
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
